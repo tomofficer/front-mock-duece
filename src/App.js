@@ -2,7 +2,7 @@ import './App.css'
 import { useEffect, useState } from 'react'
 import { GetComments } from './GetComments';
 
-function App() {
+export default function App() {
 
   //declare posts variable, set default state to empty array
   const [posts, setPosts] = useState([]);
@@ -32,4 +32,3 @@ function App() {
   );
 }
 
-export default App;
