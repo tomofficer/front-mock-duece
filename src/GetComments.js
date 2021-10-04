@@ -29,7 +29,8 @@ export const GetComments = ({ post }) => {
     return (
         <div>
             <h2>{post.title}</h2>
-            <p onClick={clickHandler}>{post.body}</p>
+            <p >{post.body}</p>
+            <button onClick={clickHandler}>Show {post.title} Comments</button>
             {
                 show &&
                     <div>
