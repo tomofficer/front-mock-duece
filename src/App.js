@@ -1,34 +1,47 @@
-import { useEffect, useState } from 'react'
-import "./App.css"
-import { GetComments } from './GetComments'
+import { useState, useEffect } from 'react'
+import GetComments from './GetComments'
 
-function App() {
+const App = () => {
 
-  const [allPosts, setAllPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const url = 'https://jsonplaceholder.typicode.com/posts'
 
     fetch(url)
       .then(res => res.json())
-      .then(data => setAllPosts(data))
+      .then(data => setPosts(data))
       .catch(err => console.log(err))
   }, []);
 
-  const mainRender = allPosts.map(post => (
-    <div>
-      <GetComments post={post}/>
-    </div>
+  const mainDisplay = posts.map(post => (
+    <GetComments post={post}/>
   ))
 
   return (
-    <div className="App">
-      {mainRender}
+    <div>
+      {mainDisplay}
     </div>
   )
 }
 
-export default App;
+export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
